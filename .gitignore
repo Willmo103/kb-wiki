@@ -1,0 +1,11 @@
+# python virtual environments
+.venv/
+
+# compiled static output
+dist/
+
+# python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+.python-version
