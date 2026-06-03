@@ -1,8 +1,15 @@
-# Knowledge-Base (kb) Stack Documentation
+# Welcome to Your Digital Garden 🌿
 
-Welcome to the central documentation site for the **kb (Knowledge-Base) Stack**. The `kb` ecosystem is a collection of modular, vertical-slice applications designed to ingest, process, model, and display personal knowledge assets, making them accessible to both users and their AI agents.
+Welcome to the **kb (Knowledge-Base) Stack** documentation site! 
 
-This documentation serves as a comprehensive guide for **users** operating the applications and **developers** maintaining or expanding the codebase.
+The `kb` ecosystem isn't just a set of database wrappers—it's a cozy, privacy-first, locally-hosted **Digital Garden** designed to gather, organize, and cultivate what you copy, see, read, and build. By combining vertical-slice Python microservices, native Electron clients, and local LLMs (via Ollama), we create a system that serves as both a private personal archive and a structured environment where autonomous AI agents can help you map out your knowledge.
+
+### Our Core Philosophy
+1. **Privacy Above All**: Your thoughts, clipboard history, web clips, and photos are yours alone. Everything runs on local iron, bypassing third-party cloud APIs.
+2. **Built for Human-Agent Symbiosis**: We model our data using simple sqlite structures and Pydantic validation so it is easy for you to browse, but also extremely structured for LLM agents to read, summarize, and catalog.
+3. **Craftsman Visuals**: We believe internal tooling shouldn't look like boring gray enterprise software. We design our layouts to feel organic—using warm tans, earthy grays, and solarized cream tones inspired by 1930s WPA National Park posters.
+
+This site contains guides, CLI commands, and database structures to help you tend to this system. Let's make it grow!
 
 ---
 
