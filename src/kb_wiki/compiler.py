@@ -26,6 +26,8 @@ FOLDER_ORDER = [
     "kb-web",
     "kb-network",
     "kb-network-agent",
+    "kb-repo",
+    "kb-vault",
 ]
 
 

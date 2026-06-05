@@ -31,6 +31,12 @@ graph TD
         KBRss["kb-rss<br/>(RSS Feed Watcher, Ollama Digest Agent & Electron UI)"]
     end
 
+    %% Local indexing
+    subgraph Local Indexing [Local File & Repo Indexers]
+        KBRepo["kb-repo<br/>(Git Repo Scanner & Watcher Daemon)"]
+        KBVault["kb-vault<br/>(Obsidian Vault Scanner & FTS Indexer)"]
+    end
+
     %% Web ingestion
     subgraph Web Portal [Web & Browser Ingestion]
         KBWeb["kb-web<br/>(FastAPI Ingestion Server & Dashboard)"]
@@ -55,6 +61,8 @@ graph TD
     KBRss -->|Read/Write| SQLite
     KBWeb -->|Read/Write| SQLite
     KBNetServer -->|Read/Write| SQLite
+    KBRepo -->|Read/Write| SQLite
+    KBVault -->|Read/Write| SQLite
 
     KBImg -->|Local API| Ollama
     KBRss -->|Local API| Ollama
@@ -65,6 +73,8 @@ graph TD
     KBRss -->|Import| KBCore
     KBWeb -->|Import| KBCore
     KBNetServer -->|Import| KBCore
+    KBRepo -->|Import| KBCore
+    KBVault -->|Import| KBCore
 ```
 
 ---
@@ -91,6 +101,12 @@ The centralized network monitoring dashboard. It exposes endpoints to receive sy
 
 ### 7. [kb-network-agent](kb-network-agent/README.md)
 A lightweight agent running on individual servers to aggregate telemetry statistics and dispatch heartbeats back to the central `kb-network` server.
+
+### 8. [kb-repo](kb-repo/README.md)
+A local Git repository scanner and change watcher. It recursively scans directory roots, catalogues working directory metadata, indexes file code contents, and uses `watchfiles` to poll files and update the FTS database representation in real-time.
+
+### 9. [kb-vault](kb-vault/README.md)
+A parser and full-text indexer for Obsidian vaults. It recursively locates Obsidian folders (containing `.obsidian`), registers vault locations, and extracts markdown note contents to seed local agent knowledge.
 
 ---
 

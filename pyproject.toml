@@ -1,6 +1,6 @@
 [project]
 name = "kb-wiki"
-version = "0.1.0"
+version = "0.2.0"
 description = "Static wiki site compiler and host server for the kb stack"
 readme = "README.md"
 authors = [
