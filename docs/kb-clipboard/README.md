@@ -39,3 +39,15 @@ To prevent infinite loops (where copy actions performed within the Electron appl
 - The Electron Client writes the hash of the copied item to `~/.kb/clip_skip.txt`.
 - The background watcher checks this file before writing to the database.
 - If a match is found, the watcher ignores the copy event and removes the entry from `clip_skip.txt`.
+
+---
+
+## Ignore Patterns
+
+To prevent capturing sensitive data (such as passwords, API keys, private tokens, or logs of automated CLI commands), users can configure regular expression filters:
+- Filter patterns are written to `~/.kb/configs/clipboard_ignore.txt`, with one regular expression per line.
+- Empty lines and lines starting with `#` are treated as comments and ignored.
+- The background watcher checks the ignore rules for every new clipboard item.
+- Matches are evaluated against raw text contents, file paths, and filenames using substring evaluation (`re.search`).
+- If a match is found, the watcher ignores/discards the clipboard item and logs the matched pattern to stdout (without printing the sensitive data).
+- The patterns can be edited directly in `~/.kb/configs/clipboard_ignore.txt` or through the Settings Modal panel in the Electron desktop application interface.
